@@ -19,9 +19,7 @@ pipeline {
 
         stage('Checkout from SCM') {
             steps {
-                git branch: 'main',
-                    credentialsId: 'github',
-                    url: 'https://github.com/csazad92/Jenkins-Test.git'
+                checkout scmGit(branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/csazad92/Jenkins-Test.git']])
             }
         }
 
